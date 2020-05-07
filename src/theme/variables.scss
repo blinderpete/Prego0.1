@@ -14,6 +14,11 @@
 }
 
 :root {
+  ion-item-divider {
+    --background: #0213fd;
+    --color: #ffffff;
+  }
+
   ion-content {
     --background: #ebe0c1;
     //--background: repeating-linear-gradient(315deg,transparent,transparent 15px,#cecdcb 15px,#cecdcb 30px);

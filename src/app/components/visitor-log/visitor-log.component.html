@@ -1,0 +1,21 @@
+<ion-header>
+<ion-toolbar>
+  <ion-title> {{orgName}}</ion-title>
+</ion-toolbar>
+</ion-header>
+<ion-content>
+<div>
+  <ion-button  expand="block" (click)="cancel()">Cancel</ion-button>
+  <ion-item>
+    <ion-label>From</ion-label>
+    <ion-datetime [(ngModel)]="dateFrom" display-format="DD/MMM/YYYY"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>To</ion-label>
+    <ion-datetime [(ngModel)]="dateTo" display-format="DD/MMM/YYYY" ></ion-datetime>
+  </ion-item>
+  <ion-button  expand="block" (click)="requestReport()">Send Request</ion-button>
+</div>
+</ion-content>
+
+<!-- display-format="YYYY MMM DD" picker-format="YYYY MMM DD" -->

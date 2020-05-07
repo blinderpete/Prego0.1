@@ -1,0 +1,8 @@
+{
+  "appId": "com.discoverconcord.prego",
+  "appName": "Prego",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

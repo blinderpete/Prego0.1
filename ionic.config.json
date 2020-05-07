@@ -1,0 +1,7 @@
+{
+  "name": "Prego",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

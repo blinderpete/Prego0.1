@@ -1,0 +1,79 @@
+<div class="login">
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label (click)="doLogin()">Login with ID code (click here) </ion-label>
+    </ion-item-divider>
+    <div *ngIf="existingAccount">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item class="login">
+              <ion-label position="stacked">Organisation ID</ion-label>
+              <ion-input [(ngModel)]="orgID" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item class="login">
+              <ion-label position="stacked">Location</ion-label>
+              <ion-input [(ngModel)]="siteAddress" type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button (click)="login()" size="large" expand="block" color="success">Login</ion-button>
+    </div>
+  </ion-item-group>
+</div>
+<div class="register">
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Registration</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="stacked">Organisation Name</ion-label>
+      <ion-input [(ngModel)]="orgName" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-textarea rows="3" [(ngModel)]="orgAddress"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contact Name</ion-label>
+      <ion-input [(ngModel)]="orgContact" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email Address</ion-label>
+      <ion-input [(ngModel)]="orgEmail" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Mobile Number</ion-label>
+      <ion-input [(ngModel)]="orgMobile" type="text"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Number of Sites</ion-label>
+            <ion-input [(ngModel)]="orgSites" (ionChange)="calcPayAmount($event)" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="stacked">Coupon</ion-label>
+            <ion-input [(ngModel)]="coupon" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+
+    <section>
+      <ion-button (click)="register()" size="large" expand="block" color="primary">Register {{payment | currency}}
+      </ion-button>
+    </section>
+
+  </ion-item-group>
+
+
+</div>

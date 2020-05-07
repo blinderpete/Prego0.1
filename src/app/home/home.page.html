@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Nau Mai Haere Mai - Prego! - You're Welcome
+    </ion-title>
+    <ion-buttons>
+      <ion-button icon-only slot="end" (click)="toggle()">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </ion-button>
+      <ion-button icon-only slot="end" (click)="retrieveVisitLog()">
+        <ion-icon name="server-outline"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+  <!-- <ion-toolbar >
+    <ion-title class="sub-heading">Company/Organisation Name Here</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <div *ngIf="!showHide">
+    <div *ngIf="!readyToPay">
+      <app-registration (registrationEvent)="registrationMessage($event)"></app-registration>
+    </div>
+
+    <div *ngIf="readyToPay">
+      <ion-item>
+        <h4>{{orgName}}</h4>
+      </ion-item>
+      <app-paypal [orgID]="orgID" [payAmt]="payCalculated" (payEvent)="payMessage($event)"></app-paypal>
+    </div>
+  </div>
+  <div *ngIf="showHide">
+    <ion-item>
+      <h4>{{orgName}}</h4>
+    </ion-item>
+    <app-capture (isReset)="isReset()"></app-capture>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Copyright 2020 - Gallagher Business Systems Ltd
+    </ion-title>
+  </ion-toolbar>
+  <!-- <p>Copyright 2020 - Gallagher Business Systems Ltd</p> -->
+</ion-footer>

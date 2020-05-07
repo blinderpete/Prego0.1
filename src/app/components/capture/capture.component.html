@@ -1,0 +1,37 @@
+<div class="covid capture">
+<ion-item-group >
+<ion-item>
+  <ion-label position="stacked">Your Name</ion-label>
+  <ion-input #eName [(ngModel)]="yourName" type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Organisation</ion-label>
+  <ion-input [(ngModel)]="yourOrg" type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Mobile</ion-label>
+  <ion-input [(ngModel)]="yourMobile" type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Email Address</ion-label>
+  <ion-input [(ngModel)]="yourEmail" type="email"></ion-input>
+</ion-item>
+</ion-item-group>
+<ion-item-group>
+  <ion-item>
+    <ion-button  (click)="timeIn()" color="success" slot="start" size="large" shape="round">Time In</ion-button>
+    <ion-button (click)="timeOut()" color="danger" slot="end" size="large" shape="round">Time Out</ion-button>
+  </ion-item>
+</ion-item-group>
+</div>
+<div>
+ <ion-item-group>
+  <ion-item-divider>
+    <ion-label>Terms and Conditions / Privacy Statement</ion-label>
+  </ion-item-divider>
+  <ion-item>
+    {{terms}}
+  </ion-item>
+ </ion-item-group>
+
+</div>
